@@ -10,11 +10,6 @@ class varible:
     def __init__(self, name, var): #type, self_memory, el_memory, total_mem
         self.name = name
         self.var = var
-        # self.type = type
-        # self.value = value
-        # self.self_memory = self_memory
-        # self.el_memory = el_memory
-        # self.total_mem = total_mem
 
     def calc(self):
         self.type = str(self.var.__class__)
