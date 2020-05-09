@@ -48,3 +48,4 @@ def insertion_sort(array):
 
 insertion_sort(array)
 print(array)
+#Privet iz branch7 :)
