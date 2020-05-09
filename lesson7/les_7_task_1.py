@@ -19,9 +19,16 @@ def sort_puzyr(arr):
         if perestanovki == 0:  # Если перестановк не было, то массив упорядочен
             break
 
+def main():
+    size = 10
+    arr = [random.randint(-100, 99) for _ in range(size)]
+    print(arr)
+    sort_puzyr(arr)
+    print(arr)
 
-size = 10
-arr = [random.randint(-100, 99) for _ in range(size)]
-print(arr)
-sort_puzyr(arr)
-print(arr)
+if __name__=='__main__':
+    main()
+
+
+
+
