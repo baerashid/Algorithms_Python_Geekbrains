@@ -1,14 +1,14 @@
 # Puzyrkom
-import random
-
-size = 10
-array = [i for i in range(size)]
-random.shuffle(array)
-print(array)
-print('-' * 50)
-
-
+# import random
 #
+# size = 10
+# array = [i for i in range(size)]
+# random.shuffle(array)
+# print(array)
+# print('-' * 50)
+#
+#
+# #
 # Puzyrkom
 # n = 1
 # while n < len(array):
@@ -76,69 +76,87 @@ print('-' * 50)
 #
 # shell_sort(array)
 # print(array)
+#
+# # Hoars sort
+# def quick_sort(array):
+#     if len(array) <= 1:
+#         return array
+#
+#     pivot = random.choice(array)
+#     s_arr = []
+#     m_arr = []
+#     l_arr = []
+#
+#     for item in array:
+#
+#         if item > pivot:
+#             l_arr.append(item)
+#         elif item < pivot:
+#             s_arr.append(item)
+#         elif item == pivot:
+#             m_arr.append(item)
+#         else:
+#             raise Exception('Smth unforseen happened')
+#
+#     return quick_sort(s_arr) + m_arr + quick_sort(l_arr)
+#
+# def quick_sort_no_memory(array, fst, lst):
+#
+#     if fst >= lst:
+#         return
+#
+#     pivot = array[random.randint(fst, lst)]
+#     i, j = fst, lst
+#
+#     while i <= j:
+#
+#         while array[i] <  pivot:
+#             i += 1
+#         while array[j] > pivot:
+#             j -= 1
+#
+#         if i <= j:
+#             array[i], array[j] = array[j], array[i]
+#             i, j = i + 1, j - 1
+#
+#     quick_sort_no_memory(array, fst, j)
+#     quick_sort_no_memory(array, i, lst)
 
-# Hoars sort
-def quick_sort(array):
-    if len(array) <= 1:
-        return array
+# #quick_sort_no_memory(array, 0, len(array) - 1)
+#
+# def reverse_list(array):
+#     for i in range(len(array)//2):
+#         array[i], array[len(array) - i - 1] = array[len(array) - i - 1], array[i]
+#
+#
+# reverse_list(array)
+# array.reverse()
+# array.sort(reverse=True)
+# print(array)
+#
+# t = tuple(random.randint(0, 100) for _ in range(10))
+# print(t)
+#
+# t = tuple(sorted(t, reverse=True))
+# print(t)
+#
+#
+from collections import namedtuple
+from operator import attrgetter
 
-    pivot = random.choice(array)
-    s_arr = []
-    m_arr = []
-    l_arr = []
+def by_age(person):
+    #print(person)
+    return person.age
 
-    for item in array:
+Person = namedtuple('Person', 'name, age')
 
-        if item > pivot:
-            l_arr.append(item)
-        elif item < pivot:
-            s_arr.append(item)
-        elif item == pivot:
-            m_arr.append(item)
-        else:
-            raise Exception('Smth unforseen happened')
+p1 = Person('Vasya', 23)
+p2 = Person('Olya', 20)
+p3 = Person('Kolya', 30)
 
-    return quick_sort(s_arr) + m_arr + quick_sort(l_arr)
+people = [p1, p2, p3]
+print(people)
 
-def quick_sort_no_memory(array, fst, lst):
-
-    if fst >= lst:
-        return
-
-    pivot = array[random.randint(fst, lst)]
-    i, j = fst, lst
-
-    while i <= j:
-
-        while array[i] <  pivot:
-            i += 1
-        while array[j] > pivot:
-            j -= 1
-
-        if i <= j:
-            array[i], array[j] = array[j], array[i]
-            i, j = i + 1, j - 1
-
-    quick_sort_no_memory(array, fst, j)
-    quick_sort_no_memory(array, i, lst)
-
-#quick_sort_no_memory(array, 0, len(array) - 1)
-
-def reverse_list(array):
-    for i in range(len(array)//2):
-        array[i], array[len(array) - i - 1] = array[len(array) - i - 1], array[i]
-
-
-reverse_list(array)
-array.reverse()
-array.sort(reverse=True)
-print(array)
-
-t = tuple(random.randint(0, 100) for _ in range(10))
-print(t)
-
-t = tuple(sorted(t, reverse=True))
-print(t)
-
-
-
+print(sorted(people))
+print(sorted(people, key=by_age))
+print(sorted(people, key=attrgetter('age')))
