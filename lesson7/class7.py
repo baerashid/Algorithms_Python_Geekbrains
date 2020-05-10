@@ -160,3 +160,6 @@ print(people)
 print(sorted(people))
 print(sorted(people, key=by_age))
 print(sorted(people, key=attrgetter('age')))
+
+#Privet iz branch7 :)
+print(int(True))
