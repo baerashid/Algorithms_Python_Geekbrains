@@ -78,10 +78,15 @@
 # print(my_index(b))
 # print(my_index(c))
 
+# import hashlib
+#
+#
+# print(hashlib.sha1(b'Hello World!').hexdigest())
+# print(hashlib.sha1(b'Hello World.').hexdigest())
+#
+# print(hashlib.sha1(b'codeword' + b'Hello World.').hexdigest())
+
 import hashlib
 
 
-print(hashlib.sha1(b'Hello World!').hexdigest())
-print(hashlib.sha1(b'Hello World.').hexdigest())
 
-print(hashlib.sha1(b'codeword' + b'Hello World.').hexdigest())
