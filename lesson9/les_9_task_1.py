@@ -31,7 +31,8 @@ def find_substr(string) -> int:
                 len_sub = len(sub_sting)
                 h_sub = hashlib.sha1(sub_sting.encode('utf-8')).hexdigest()
 
-                for k in range(len_str - len_sub + 1):
+                for k in range(len_str - len_sub + 1): # можно начинать не с нуля здесь а с i, ибо сзади вхождения точно посчитаны уже
+                                                       # это уменьшит сложность, однако ж с нуля нагляднее
                     candidate = string[k:k + len_sub]
                     h_candidate = hashlib.sha1(candidate.encode('utf-8')).hexdigest()
 
